@@ -1,0 +1,1580 @@
+/* PENGATURAN DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Anti geser kanan kiri */
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #3a2c05;
+}
+
+
+/* =====================================
+   NAVBAR 
+===================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    padding: 0 60px;
+    background: #3a2c05;
+
+    position: fixed;   /* 🔥 ini yang bikin ngunci */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;               /* BESARKAN */
+    width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); /* biar tegas */
+}
+
+/* Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+/* Link dasar */
+.nav-menu a {
+    color: #f3e9d2;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+.nav-menu a:hover {
+    color: #ffffff;
+    text-shadow: 
+        0 0 8px #e6cfa8,
+        0 0 15px #e6cfa8;
+    border-bottom: 2px solid #e6cfa8;
+}
+
+/* Active */
+.nav-menu a.active {
+    color: #ffffff;
+    text-shadow: 
+        0 0 8px #e6cfa8,
+        0 0 18px #e6cfa8;
+    border-bottom: 2px solid #e6cfa8;
+}
+/* =========================
+   HAMBURGER MENU
+========================= */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* HOME - HERO */
+
+/* HERO SLIDER */
+.hero-slider {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+     margin-top: 75px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Overlay gelap biar teks kebaca */
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.3) 70%,
+        rgba(0,0,0,0.2) 100%
+    );
+    top: 0;
+    left: 0;
+}
+
+/* Konten teks */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    color: white;
+}
+
+.home-wrapper {
+    background: #e7b769;    /* BG UTAMA HOME */
+    padding-bottom: 60px;
+}
+
+
+.hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     padding: 60px 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+.hero-text {
+    max-width: 520px;
+}
+
+.hero-text h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 60px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    color: #fff9f9;
+    letter-spacing: 1px;
+}
+
+.hero-text .tagline {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #f3e9d2;
+    line-height: 1.6;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 28px;
+    background: #3a2c05;
+    color: #f3e9d2;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #b87605;
+    color: #3a2c05;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* GARIS HALUS PEMISAH */
+.hero-divider {
+    width: 100%;
+    height: 2px;
+    background: #3a2c05;
+    margin: 0;
+}
+
+/* =====================
+   HOME - DESKRIPSI
+===================== */
+.home-desc {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.8s ease;
+
+    padding: 70px 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.home-desc.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-desc h2 {
+    font-size: 26px;
+     margin-top: 0px; 
+    margin-bottom: 10px;
+    color: #3a2c05;
+}
+
+.home-desc-text p:first-child {
+    margin-top: 0;
+}
+
+.home-desc p {
+    max-width: 800px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.garis-lurus {
+    width: 100%;
+    height: 2px;
+    background: #3a2c05;
+    margin: 40px 0;
+}
+
+/* TEKS JUSTIFY */
+.home-desc-text p {
+    text-align: justify;
+    margin-bottom: 14px;
+}
+
+
+
+/* =====================
+   HOME - IKON NYATU DENGAN JUDUL
+===================== */
+
+.home-desc-content {
+    display: grid;
+    grid-template-columns: 1fr 240px; 
+    gap: 32px;                        
+    align-items: center;
+}
+
+/* TEKS */
+.home-desc-text {
+    max-width: 780px;
+}
+
+/* IKON */
+.home-desc-icons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   
+    margin-top: 6px;      
+}
+
+.home-desc-icons img {
+    width: 120px;            
+    height: auto;
+}
+
+/* KOMENTAR */
+.komentar-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: #291606;
+    padding: 40px;
+    border-radius: 20px;
+    color: #dfc9a6;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1C0909;
+}
+
+
+.komentar-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.komentar-section label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+.komentar-section input,
+.komentar-section textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 6px;
+    background: #f3e9d2;
+}
+
+.komentar-section button {
+    display: block;        
+    margin: 20px auto 0; 
+    margin-top: 20px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #b87605;   
+    color: #291606;        
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.komentar-section button:hover {
+    background: #dfc9a6;   
+    color: #291606;
+    transform: translateY(-2px);
+}
+
+/* ========================
+   KOMENTAR PUBLIK
+======================== */
+
+.komentar-container{
+max-width:1100px;
+margin:80px auto;
+background:#291606;
+padding:40px;
+border-radius:20px;
+}
+
+.komentar-publik{
+padding-top:50x;
+padding-bottom:1px;
+}
+
+.judul-komentar{
+text-align:center;
+color:#fff;
+margin-bottom:40px;
+font-size:28px;
+}
+
+/* GRID */
+.komentar-grid{
+display: grid !important;
+grid-template-columns:repeat(3,1fr);
+justify-content: center;
+gap:25px;
+place-items: center !important;
+    min-height: 200px;
+}
+
+/* CARD */
+.card-komentar{
+background:rgb(241, 223, 223);
+padding:22px;
+border-radius:14px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-komentar:hover{
+    transform:translateY(-6px);
+}
+
+/* HEADER */
+.komentar-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.komentar-header span{
+color:#000000;
+font-size:13px;
+}
+
+.komentar-header strong{
+    color:#000000;
+}
+
+.komentar-header span{
+    font-size:13px;
+    color:#777;
+}
+
+/* ISI KOMENTAR */
+.card-komentar p{
+    font-size:14px;
+    line-height:1.6;
+    color:#2c2b2b;
+}
+
+/* ANIMASI HERO TEXT */
+.hero-text {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pagination{
+    margin-top:30px;
+    text-align:center;
+}
+
+.pagination a{
+    display:inline-block;
+    margin:0 5px;
+    padding:8px 14px;
+    background:#e6d3b1;
+    color:#291606;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.pagination a:hover{
+    background:#c9a66b;
+}
+
+.pagination a.active{
+    background:#6E5709;
+    color:#fff;
+}
+
+/* PREV & NEXT */
+.pagination a:first-child,
+.pagination a:last-child{
+    font-weight:600;
+    padding:8px 16px;
+}
+
+/* HOVER KHUSUS PREV/NEXT */
+.pagination a:first-child:hover,
+.pagination a:last-child:hover{
+    background:#b87605;
+    color:#fff;
+    transform: translateY(-2px);
+}
+
+.pagination a:active{
+    transform: scale(0.95);
+}
+
+.komentar-kosong {
+    width: 100%;
+    text-align: center;
+    color: #dfc9a6;
+    text-align: center;
+    margin: auto;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.komentar-kosong h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.komentar-kosong p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+.footer {
+    background: #3a2c05;
+    color: #e6cfa8;
+    padding: 18px 20px;   /* lebih kecil */
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;             /* kecilkan jarak */
+}
+
+.footer-left {
+    font-size: 13px;
+    line-height: 1.4;     /* lebih rapat */
+}
+
+.footer-left span {
+    font-size: 11px;
+    color: #b89a6b;
+}
+
+/* animasi komen*/
+/* MASUK DARI KANAN */
+.slide-in-right {
+    animation: slideInRight 0.4s ease forwards;
+}
+
+/* KELUAR KE KIRI */
+.slide-out-left {
+    animation: slideOutLeft 0.3s ease forwards;
+}
+
+.komentar-grid{
+    overflow: hidden;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    to {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+}
+
+
+/* =====================
+   ABOUT PAGE 
+===================== */
+
+.about-wrapper {
+    padding: 100px 0 60px;
+    background: #e7b769; 
+    min-height: 100vh;
+}
+
+/* ===== JUDUL ABOUT ===== */
+.about-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: #1C0909;
+    margin-bottom: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+/* ===== GARIS SAMPING JUDUL ABOUT ===== */
+.about-title::before,
+.about-title::after {
+    content: "";
+    flex: 1;
+    max-width: 100px;
+    height: 4px;
+    background: #3a2c05;
+    border-radius: 3px;
+}
+
+
+/* CARD UTAMA */
+/* ABOUT CARD SCROLL ANIMATION */
+.about-card {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: #291606;
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    color: #f3e9d2;
+
+    opacity: 0;
+    transform: translateY(50px);
+    animation: aboutFadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes aboutFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.about-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* FOTO */
+.about-photo img {
+    width: 180px;
+    border-radius: 20px;
+    border: 4px solid #dfc9a6;
+    transition: 0.4s ease;
+}
+
+.about-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* TEKS */
+.about-text h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #f3e9d2;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 14px;
+    text-align: justify;
+    color: #f3e9d2;
+}
+
+/* ===== HUBUNGI KAMI ===== */
+.about-contact {
+    margin-top: 30px;
+}
+
+.about-contact h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #dfc9a6;
+}
+
+.contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: #dfc9a6;
+    color: #291606;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #b89a6b;
+    transform: translateY(-3px);
+}
+
+
+
+/* =====================
+   GAME PAGE 
+===================== */
+
+/* ===== BACKGROUND HALAMAN GAME ===== */
+.game-page {
+    background: #e7b769; 
+    min-height: calc(100vh - 64px - 120px);
+    padding: 100px 0 60px;
+}
+
+/* ===== JUDUL HALAMAN ===== */
+.game-title {
+    display: flex; /* agar bisa pakai garis  */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: #1C0909;
+    margin-bottom: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+.game-title {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideTitleGame 0.8s ease forwards;
+}
+
+@keyframes slideTitleGame {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Garis samping judul */
+.game-title::before,
+.game-title::after {
+    content: "";
+    flex: 1;
+    max-width: 100px;
+    height: 4px;
+    background: #3a2c05;
+    border-radius: 3px;
+}
+
+/* ===== CARD UTAMA ===== */
+.game-card {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 24px;
+}
+
+/* ===== CARD UMUM ===== */
+.game-box {
+    background: #291606;
+    padding: 40px;
+    border-radius: 26px;
+    box-shadow: 
+        0 18px 40px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-box:hover {
+    transform: translateY(-5px);    
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+/* ===== INFO GAME ===== */
+.game-box-inner {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start; 
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ===== HERO VISUAL ===== */
+.game-hero-visual {
+    max-width: 450px;         
+    margin: 0 auto 70px;
+    padding: 30px;
+    background: #291606;
+    border-radius: 28px;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.35),
+        inset 0 0 0 2px rgba(58,44,5,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-hero-visual {
+    animation: floatBoard 4s ease-in-out infinite;
+}
+
+@keyframes floatBoard {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+.game-hero-visual:hover {
+    transform: translateY(-5px);    
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.game-hero-visual img {
+    width: 100%;
+    aspect-ratio: 1 / 1;      
+    object-fit: contain;
+    border-radius: 20px;
+    background: #885a0f;
+    padding: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+
+/* deskripsi e game */
+.game-content-center {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify; /* rata kiri opo kanan */
+}
+
+.game-content-center h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #fad9d9;
+    text-align: center; /* judul tetap tengah */
+}
+
+
+/* ===== GAMBAR GAME ===== */
+.game-image {
+    position: relative;
+    z-index: 1;
+}
+
+.game-image img {
+    width: 240px;
+    border-radius: 18px;
+    background: #f6ecd6;
+    padding: 14px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* ===== IMAGE FULL MODAL ===== */
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.board-img {
+    cursor: zoom-in;
+}
+/* ===== JUDUL PAPAN ===== */
+.board-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.board-caption {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.board-caption span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+
+/* Efek Lampu di belakang gambar  */
+.game-image::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #fad9d9;
+    filter: blur(80px);
+    opacity: 0.15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* ===== KOMPONEN PERMAINAN ===== */
+.game-components {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.components-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1C0909;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* SCROLL HORIZONTAL */
+.components-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* biar scroll lebih smooth */
+.components-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.components-scroll::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* CARD */
+.component-card {
+    min-width: 140px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+}
+
+/* GAMBAR */
+.component-card img {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.component-card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== CONTAINER KOMPONEN ===== */
+.components-container {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 30px;
+    background: #291606;
+    border-radius: 20px;
+    border: 2px solid #c5a46d;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* JUDUL */
+.components-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* SCROLL */
+.components-scroll {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* SCROLL STYLE */
+.components-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.components-scroll::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* CARD */
+.component-card {
+    min-width: 120px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-4px);
+}
+
+/* GAMBAR */
+.component-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+.component-card p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== KONTEN GAME ===== */
+.game-content h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #fad9d9;
+}
+
+.game-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #fad9d9;
+    border: 1px solid rgba(250, 217, 217, 0.2);
+}
+
+.game-desc {
+    line-height: 1.85;
+    font-size: 16px;
+    color: #fad9d9;
+}
+
+/* ===== CARA BERMAIN & ATURAN ===== */
+.game-rules {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.game-box {
+    padding: 35px 30px; /* sedikit dirapihin */
+}
+
+/* ===== JUDUL CARD ===== */
+.game-box-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #fad9d9;
+    padding-bottom: 15px;
+    position: relative;
+    border-bottom: 2px dashed rgba(250, 217, 217, 0.2); 
+}
+
+/* ===== LIST CUSTOM ===== */
+.cara-bermain,
+.aturan-permainan {
+    list-style: none; 
+    padding-left: 0;
+}
+
+.cara-bermain li,
+.aturan-permainan li {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #fad9d9;
+    display: flex;
+    gap: 12px;
+}
+
+
+.cara-bermain li::before,
+.aturan-permainan li::before {
+    content: counter(item) ".";
+    counter-increment: item;
+    font-weight: bold;
+    color: #dfc9a6;
+}
+
+.cara-bermain { counter-reset: item; }
+.aturan-permainan { counter-reset: item; }
+
+.cara-bermain li,
+.aturan-permainan li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.game-box.show .cara-bermain li,
+.game-box.show .aturan-permainan li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SCROLL ANIMATION GAME BOX */
+.game-box {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.8s ease;
+}
+
+.game-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================
+   MERCH PAGE
+===================== */
+
+/* ===== MERCH PAGE WRAPPER ===== */
+.merch-page {
+    background: #e7b769;  
+    padding: 100px 0 60px;
+}
+
+/* ===== CONTAINER WRAPPER ===== */
+.merch-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== JUDUL HALAMAN ===== */
+.merch-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #1C0909;
+    margin-bottom: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+.merch-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideMerchTitle 0.8s ease forwards;
+}
+
+@keyframes slideMerchTitle {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== GARIS SAMPING JUDUL ===== */
+.merch-title::before,
+.merch-title::after {
+    content: "";
+    flex: 1;
+    max-width: 100px;
+    height: 4px;
+    background: #3a2c05;
+    border-radius: 3px;
+}
+
+
+/* ===== GRID LAYOUT ===== */
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    justify-content: center;   /* bikin auto center */
+    gap: 25px;
+}
+
+
+/* ===== CARD PRODUK ===== */
+.merch-card {
+    background: #291606;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HOVER EFFECT CARD ===== */
+.merch-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== CONTAINER GAMBAR ===== */
+.merch-image {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+}
+
+/* ===== GAMBAR PRODUK FIX ===== */
+.merch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== BODY CARD ===== */
+.merch-body {
+    padding: 20px;
+    color: #fff;
+}
+
+/* ===== JUDUL PRODUK ===== */
+.merch-product-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ===== HARGA ===== */
+.merch-price {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ===== STOCK BADGE ===== */
+.merch-stock {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #dfc9a6;
+}
+
+/* STOCK AVAILABLE */
+.merch-stock.available {
+    background: #1f6b3f;
+    color: #fff;
+}
+
+/* STOCK HABIS */
+.merch-stock.out {
+    background: #8b1e1e;
+    color: #fff;
+}
+
+/* BUTTON DISABLED */
+.merch-btn.disabled {
+    background: #777;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+/* ===== DESKRIPSI ===== */
+.merch-desc {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* ===== TOMBOL WHATSAPP ===== */
+.merch-btn {
+    display: inline-flex;   /* ganti dari flex ke inline-flex */
+    background: #25D366;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+     transition: all 0.3s ease;
+}
+
+/* Tambahkan ini */
+.merch-body {
+    text-align: center;
+}
+
+
+/* ===== HOVER TOMBOL ===== */
+.merch-btn:hover {
+    background: #1ebe5d;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+/* ===== ICON WHATSAPP ===== */
+.wa-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* ANIMASI MERCH CARD */
+.merch-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUpMerch 0.7s ease forwards;
+}
+
+.merch-card:nth-child(1) { animation-delay: 0.1s; }
+.merch-card:nth-child(2) { animation-delay: 0.2s; }
+.merch-card:nth-child(3) { animation-delay: 0.3s; }
+.merch-card:nth-child(4) { animation-delay: 0.4s; }
+.merch-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeUpMerch {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= ZOOM IMAGE ================= */
+.zoom-img {
+    cursor: zoom-in;
+}
+
+/* MODAL */
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ======================================
+   RESPONSIVE GLOBAL (FINAL CLEAN)
+====================================== */
+@media (max-width: 768px) {
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #3a2c05;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        padding: 14px 20px;
+    }
+
+    /* ================= HERO ================= */
+    .hero-slider {
+        height: 100vh;
+        margin-top: 60px;
+    }
+
+    .hero {
+        height: calc(100vh - 60px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text .tagline {
+        font-size: 13px;
+    }
+
+    /* ================= DESKRIPSI ================= */
+    .home-desc {
+        padding: 25px 15px;
+    }
+
+    .home-desc-content {
+        display: block;
+    }
+
+    .home-desc-text p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .home-desc-icons {
+        display: none;
+    }
+
+    /* ================= KOMENTAR ================= */
+    .komentar-section {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    .komentar-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ================= PAGINATION ================= */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* ================= ABOUT ================= */
+    .about-wrapper {
+        padding: 30px 15px;
+    }
+
+    .about-title {
+        font-size: 24px;
+        gap: 10px;
+    }
+
+    .about-title::before,
+    .about-title::after {
+        max-width: 40px;
+    }
+
+    .about-card {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about-photo img {
+        width: 130px;
+        border-radius: 50%;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    /* ================= GAME RESPONSIVE FIX ================= */
+    @media (max-width: 768px) {
+
+        /* container utama */
+        .game-card {
+            padding: 0 15px;
+            gap: 25px;
+        }
+
+        /* aturan & cara bermain */
+        .game-rules {
+            display: grid;
+            grid-template-columns: 1fr; /* 🔥 jadi 1 kolom */
+            gap: 20px;
+        }
+
+        /* card */
+        .game-box {
+            width: 100%;
+            max-width: 100%;
+            padding: 20px 18px;
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+
+        /* isi dalam */
+        .game-box-inner {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+
+        /* gambar */
+        .game-hero-visual {
+            max-width: 240px;
+            margin: 0 auto 30px;
+            padding: 15px;
+        }
+
+    }
+
+    /* ================= MERCH ================= */
+    .merch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer-content {
+        text-align: center;
+        font-size: 13px;
+    }
+}
