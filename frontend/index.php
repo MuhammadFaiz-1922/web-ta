@@ -105,7 +105,7 @@ serta pemahaman nilai budaya dalam bentuk permainan yang menarik.
 </div>
 
 <div class="home-desc-icons">
-<img src="assets/img/pion3.png">
+<img src="assets/img/pion5.png">
 </div>
 </div>
 </section>
