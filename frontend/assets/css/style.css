@@ -8,11 +8,10 @@
 /* Anti geser kanan kiri */
 body {
     overflow-x: hidden;
-}
-
-body {
     font-family: Arial, sans-serif;
     color: #3a2c05;
+
+    padding-top: 75px; /* 🔥 TAMBAHKAN DI SINI */
 }
 
 
@@ -97,7 +96,6 @@ body {
     position: relative;
     height: 90vh;
     overflow: hidden;
-     margin-top: 75px;
 }
 
 .slide {
@@ -582,7 +580,7 @@ font-size:13px;
 ===================== */
 
 .about-wrapper {
-    padding: 100px 0 60px;
+    padding: 60px 0 60px;
     background: #e7b769; 
     min-height: 100vh;
 }
@@ -717,7 +715,7 @@ font-size:13px;
 .game-page {
     background: #e7b769; 
     min-height: calc(100vh - 64px - 120px);
-    padding: 100px 0 60px;
+    padding: 60px 0 60px;
 }
 
 /* ===== JUDUL HALAMAN ===== */
@@ -1173,14 +1171,19 @@ font-size:13px;
 /* ===== MERCH PAGE WRAPPER ===== */
 .merch-page {
     background: #e7b769;  
-    padding: 100px 0 60px;
-}
+    padding: 60px 0 60px;
 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 /* ===== CONTAINER WRAPPER ===== */
 .merch-wrapper {
     width: 90%;
     max-width: 1200px;
     margin: auto;
+
+    flex: 1;
 }
 
 /* ===== JUDUL HALAMAN ===== */
@@ -1399,6 +1402,32 @@ font-size:13px;
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+
+.merch-empty-box{
+    text-align:center;
+    padding:80px 20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.merch-empty-box img{
+    width:120px;
+    opacity:0.7;
+}
+
+.merch-empty-box h3{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.merch-empty-box p{
+    color:#555;
+}
+
+
 
 /* ======================================
    RESPONSIVE GLOBAL (FINAL CLEAN)

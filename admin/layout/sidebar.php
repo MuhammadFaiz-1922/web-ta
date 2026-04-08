@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config/koneksi.php';
 
 $notif_komen = mysqli_fetch_assoc(mysqli_query($koneksi,

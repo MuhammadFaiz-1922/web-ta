@@ -79,10 +79,15 @@ include '../config/koneksi.php';
         <?php
             endwhile;
         else:
-        ?>
-            <p class="merch-empty">Belum ada merchandise.</p>
-        <?php endif; ?>
+?>
 
+<div class="merch-empty-box">
+    
+    <h3>Belum ada merchandise</h3>
+    <p>Silakan cek kembali nanti ya 👀</p>
+</div>
+
+<?php endif; ?>
         </div>
 
     </div>
