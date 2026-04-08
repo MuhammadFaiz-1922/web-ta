@@ -41,7 +41,7 @@ body {
 }
 
 .logo img {
-    height: 100px;               /* BESARKAN */
+    height: 60px;               /* BESARKAN */
     width: auto;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); /* biar tegas */
 }
@@ -378,24 +378,26 @@ font-size:28px;
 
 /* GRID */
 .komentar-grid{
-display: grid !important;
-grid-template-columns:repeat(3,1fr);
-justify-content: center;
-gap:25px;
-place-items: center !important;
-    min-height: 200px;
+    display: flex; /* 🔥 ganti grid ke flex */
+    justify-content: center; /* tengah */
+    gap: 25px;
+    flex-wrap: wrap; /* turun kalau banyak */
 }
 
 /* CARD */
 .card-komentar{
-background:rgb(241, 223, 223);
-padding:22px;
-border-radius:14px;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    width: 280px; /* 🔥 ukuran fix biar konsisten */
+    
+    background: rgb(241, 223, 223);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    transition: 0.3s ease;
 }
 
 .card-komentar:hover{
-    transform:translateY(-6px);
+    transform: translateY(-6px);
 }
 
 /* HEADER */

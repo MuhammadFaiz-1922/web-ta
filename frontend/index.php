@@ -3,7 +3,9 @@
 
 <?php
 include '../config/koneksi.php';
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ob_start();
 // ==========================
 // SIMPAN KOMENTAR
 // ==========================
@@ -177,10 +179,13 @@ Kirim Komentar
 <?php if (isset($_GET['status']) && $_GET['status'] == 'sukses'): ?>
 <script>
 Swal.fire({
-icon: 'success',
-title: 'Komentar Terkirim',
-text: 'Terima kasih 🙏',
-confirmButtonColor: '#6E5709'
+    icon: 'success',
+    title: 'Komentar Terkirim',
+    text: 'Terima kasih 🙏',
+    confirmButtonColor: '#6E5709'
+}).then(() => {
+    // 🔥 hapus ?status=sukses dari URL
+    window.history.replaceState(null, null, window.location.pathname);
 });
 </script>
 <?php endif; ?>
