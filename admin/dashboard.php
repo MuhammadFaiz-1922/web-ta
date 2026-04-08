@@ -50,6 +50,19 @@ $admin = mysqli_query($koneksi, "
 
 <div class="title-wrapper">
     <h3 class="page-title">Dashboard</h3>
+
+    <div class="navbar-right">
+        <div class="profile-menu" onclick="toggleDropdown()">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</div>
+
+<!-- 🔥 DROPDOWN DI LUAR NAVBAR -->
+<div class="dropdown-menu" id="dropdownMenu">
+    <a href="admin_tampil.php">Setting</a>
+    <a href="#" onclick="confirmLogout(); return false;">Logout</a>
 </div>
 
 <!-- ========================
@@ -226,7 +239,7 @@ Admin belum mengubah apapun
 <!-- ========================
 ADMIN
 ======================== -->
-<div class="dashboard-box">
+<!-- <div class="dashboard-box">
 
 <h5>Data Admin</h5>
 
@@ -269,7 +282,7 @@ Tidak ada data admin
 </table>
 
 </div>
-</div>
+</div> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -342,3 +355,17 @@ setInterval(function(){
 <?php
 include 'layout/footer.php';
 ?>
+
+<script>
+function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+/* klik luar = nutup */
+window.onclick = function(e) {
+    if (!e.target.closest('.profile-menu')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+    }
+}
+</script>

@@ -33,22 +33,35 @@ $data = mysqli_query($koneksi, "SELECT * FROM tb_komen ORDER BY id_komen DESC");
             </tr>
         </thead>
         <tbody>
-        <?php $no=1; while($k = mysqli_fetch_assoc($data)): ?>
-            <tr>
-                <td><?= $no++ ?></td>
-                <td><?= htmlspecialchars($k['nama_penulis']) ?></td>
-                <td><?= htmlspecialchars($k['detail_komen']) ?></td>
-                <td><?= $k['tanggal_komen'] ?></td>
-                <td>
-                    <a href="#"
-                       onclick="hapusKomen(<?= $k['id_komen'] ?>)"
-                       class="btn-danger-custom">
-                       Hapus
-                    </a>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-        </tbody>
+<?php 
+if(mysqli_num_rows($data) > 0){
+    $no = 1;
+    while($k = mysqli_fetch_assoc($data)):
+?>
+    <tr>
+        <td><?= $no++ ?></td>
+        <td><?= htmlspecialchars($k['nama_penulis']) ?></td>
+        <td><?= htmlspecialchars($k['detail_komen']) ?></td>
+        <td><?= $k['tanggal_komen'] ?></td>
+        <td>
+            <a href="#"
+               onclick="hapusKomen(<?= $k['id_komen'] ?>)"
+               class="btn-danger-custom">
+               Hapus
+            </a>
+        </td>
+    </tr>
+<?php 
+    endwhile;
+} else {
+?>
+    <tr>
+        <td colspan="5" style="text-align:center; padding:20px; color:#777;">
+            Tidak ada komentar masuk
+        </td>
+    </tr>
+<?php } ?>
+</tbody>
     </table>
     </div>
 </div>

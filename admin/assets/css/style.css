@@ -140,36 +140,101 @@ html, body {
     flex: 1;
     padding: 20px 60px 40px 60px;
     margin-left: 260px;
+    margin-top: 100px;
 }
 
 
-
-/* =========================
+/* =========================    
    PAGE TITLE
 ========================= */
 .page-title {
-    font-size: 36px;
-    font-weight: 800;
     margin: 0;
-
-    position: sticky;
-    top: 0;
-    z-index: 500;
-
-    background: #c59309ef;
-
-    /* 🔥 INI KUNCI */
-    margin-left: -60px;
-    margin-right: -60px;
-    padding: 20px 60px;
-    margin-top: -20px;
+    font-size: 32px;
+    font-weight: 800;
 }
 
 .title-wrapper {
-    margin: 0 -60px 30px -60px;  /* lawan padding content */
-    padding: 0 60px 10px 60px;
-    
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    z-index: 1000;
+
+    background: #c59309;
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* kanan navbar */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* tombol profile */
+.profile-btn {
+    background: #383227;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.profile-btn:hover {
+    background: #5A4607;
+}       
+
+/* container profile */
+.profile-menu {
+    cursor: pointer;
+    background: #383227;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* dropdown default hidden */
+.dropdown-menu {
+    position: fixed; /* 🔥 kunci utama */
+    top: 80px;
+    right: 30px;
+
+    background: white;
+    border-radius: 10px;
+    min-width: 150px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    display: none;
+    z-index: 999999; /* 🔥 paling atas */
+}
+
+/* tampil */
+/* SHOW */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* ITEM */
+.dropdown-menu a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f2f2;
+}
+
 
 
 
@@ -440,9 +505,13 @@ margin-left:8px;
         width: 100%;
     }
 
-    .content-area {
-        padding: 20px;
-    }
+.content-area {
+    flex: 1;
+    padding: 20px 60px 40px 60px;
+    margin-left: 260px;
+
+    margin-top: 100px; /* 🔥 TAMBAH INI */
+}
 
 }
 
@@ -564,29 +633,67 @@ margin-left:8px;
     text-decoration: underline;
 }
 
-/* =========================
-   FIX KHUSUS HALAMAN ADMIN
-========================= */
+/* KHUSUS HALAMAN PROFIL */
+.page-admin .form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
 
-/* perbaiki title tanpa ganggu halaman lain */
-.page-admin .title-wrapper {
-    margin: 0 0 30px 0;
-    padding: 0 0 10px 0;
-
+    transform: translateX(-120px); /* 🔥 geser ke kiri */
 }
-
-/* spacing rapi */
-.page-admin .container-admin > * {
-    margin-bottom: 30px;
-}
-
-/* center form */
 .page-admin .form-card {
-    margin: 0 auto 30px auto;
+    max-width: 500px;
+    width: 100%;
 }
 
-.menu-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none; /* 🔥 ga bisa diklik */
+/* =========================
+   LOGO SIDEBAR
+========================= */
+.sidebar-logo {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.sidebar-logo img {
+    width: 150px;
+}
+
+
+/* =========================
+   PROFILE BAWAH SIDEBAR
+========================= */
+.sidebar-profile {
+    margin: 20px;
+    padding: 12px 15px;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    backdrop-filter: blur(5px);
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6c4bd2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-role {
+    font-size: 12px;
+    opacity: 0.8;
 }

@@ -11,16 +11,10 @@ $notif_komen = mysqli_fetch_assoc(mysqli_query($koneksi,
     <!-- SIDEBAR -->
     <div class="sidebar">
 
-        <!-- ADMIN INFO -->
-        <div class="sidebar-header">
-            <div class="admin-avatar">👤</div>
-            <div class="admin-name">
-                <?= $_SESSION['nama'] ?? 'Administrator' ?>
-            </div>
-            <div class="admin-role">Administrator</div>
+        <div class="sidebar-logo">
+            <img src="../frontend/assets/img/logo.png">
         </div>
-
-        <!-- MENU -->
+                <!-- MENU -->
         <div class="sidebar-menu">
            
         <a href="dashboard.php" class="<?= ($active == 'dashboard') ? 'active' : '' ?>">
@@ -33,19 +27,14 @@ $notif_komen = mysqli_fetch_assoc(mysqli_query($koneksi,
             Merchandise
         </a>
 
+
     <?php if ($_SESSION['role'] == 'super_admin'): ?>
 
-        <a href="admin_tampil.php" class="<?= ($active == 'admin') ? 'active' : '' ?>">
-            <i class="fa-solid fa-user-gear"></i>
-            Setting Profile
-        </a>
+   
 
         <?php else: ?>
 
-        <a href="#" class="menu-disabled">
-            <i class="fa-solid fa-user-lock"></i>
-            Settings Profile
-        </a>
+
 
         <?php endif; ?>
         <a href="komen_tampil.php" class="<?= $active=='komen'?'active':'' ?>">
@@ -59,11 +48,21 @@ $notif_komen = mysqli_fetch_assoc(mysqli_query($koneksi,
         </div>
 
         <!-- LOGOUT -->
-        <div class="sidebar-footer">
+        <!-- <div class="sidebar-footer">
             <a href="logout.php" onclick="return confirmLogout()" class="logout-btn">
                 Logout
             </a>
+        </div> -->
+
+              <div class="sidebar-profile">
+    <div class="profile-avatar">👤</div>
+    <div>
+        <div class="profile-name">
+            <?= $_SESSION['nama'] ?? 'Admin' ?>
         </div>
+        <div class="profile-role">Administrator</div>
+    </div>
+</div>
 
     </div>
 
