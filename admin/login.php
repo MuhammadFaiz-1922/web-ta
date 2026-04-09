@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <title>Login Admin</title>
 
-    <link rel="stylesheet" href="/backend_gamefaiz/admin/assets/css/style.css?v=10">
+    <link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 
 <body class="login-page">
